@@ -16,7 +16,8 @@ export default function App() {
   const pageSize=6;
   const country='in';
   const [progress, setProgress] = useState(0);
-  const apiKey='d84f97d67b23428c9f62a1ae45d08e0f'
+  // api key which will be coming from .env file please make sure you add it from API( newsApi)
+  const apiKey=process.env.REACT_APP_API_KEY 
     return (
         <Router>
           <div>
