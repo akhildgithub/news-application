@@ -1,32 +1,22 @@
 
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
-
 import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
-
 
 export default function App() {
   const pageSize=6;
   const country='in';
   const [progress, setProgress] = useState(0);
-  // api key which will be coming from .env file please make sure you add it from API( newsApi)
+  // api key which will be coming from .env file 
   const apiKey=process.env.REACT_APP_API_KEY 
     return (
         <Router>
           <div>
             <Navbar/>
-          <LoadingBar
-          height={3}
-            color='#0072ff'
-            progress={progress}
-          />
+              <LoadingBar height={3} color='#0072ff' progress={progress}/>
               <Routes>
                 
                 <Route exact path='/' element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country={country} category='general'/>} />
